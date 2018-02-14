@@ -1,21 +1,103 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Welcome to my page</title>
-  
-  </head>
-  <body>
-  <center>
-  <h1>Welcome to my Page.</h1>
-  <h2>You're new here, aren't you?</h2>
-  
-  
-  </center>
-  <img src="comma.jpg" alt="Do you get the pun?" width="320" height="300">
-  <img src="wacky.jpg" alt="My wacky future wife" width="320" height="300">
-  <img src="dorb.jpg" alt="Aren't we cute?" width="320" height="300">
-  <p>I will be using this site to practice my HTML skills.</p>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;}
 
-  </body>
-</html>
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+
+.topright {
+    float: right;
+    cursor: pointer;
+    font-size: 28px;
+}
+
+.topright:hover {color: red;}
+</style>
+</head>
+<body>
+
+<p>Click on the x button in the top right corner to close the current tab:</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'wacky')" id="defaultOpen">Wacky</button>
+  <button class="tablinks" onclick="openCity(event, 'comma')">Puns</button>
+  <button class="tablinks" onclick="openCity(event, 'dorb')">Adorable</button>
+</div>
+
+<div id="wacky" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h3>My girl</h3>
+  <p> <img src="wacky.JPG" alt="My wacky future wife" width="350" height="300"> She's crazy! </p>
+</div>
+
+<div id="comma" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h3>Comma Chameleon</h3>
+  <p> <img src="comma.jpg" alt="Do you get the pun?" width="350" height="300"> Do you get it?</p> 
+</div>
+
+<div id="dorb" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <h3>Cute</h3>
+  <p> <img src="dorb.JPG" alt="Aren't we cute?" width="350" height="300"> Just look at us.</p>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 
