@@ -1,0 +1,143 @@
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+a:link {
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: purple;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+</style>
+<style>
+h1, h2, p.center {
+    text-align: center;
+    color: black;
+}
+body {font-family: Arial;}
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+.tab button:hover {
+    background-color: #ddd;
+}
+.tab button.active {
+    background-color: #ccc;
+}
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+.topright {
+    float: right;
+    cursor: pointer;
+    font-size: 28px;
+}
+.topright:hover {color: red;}
+</style>
+</head>
+<body>
+
+  <h1>Bumpin' Bluegrass</h1>
+
+<p class="center"><a href="https://tcmg476.github.io">Return to Home</a></p>
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'blue1')">The Overview</button>
+  <button class="tablinks" onclick="openCity(event, 'blue2')">The Instruments</button>
+  <button class="tablinks" onclick="openCity(event, 'blue3')">Steve Martin</button>
+</div>
+
+<div id="blue1" class="tabcontent" style="display: block; margin: auto;">
+  <span onclick="this.parentElement.style.display='none'" class="topright">×</span>
+  <h3>The Overview</h3>
+    <div class="image-container" style="/* width: 1200px; */height: auto;text-align:  center;display:  inline-block;">
+  <img src="blue1.jpg" alt="" width="100%" height="auto">
+  </div>
+  <p class="center" style="font-size:140%;"><b>The Overview<br></b></p>
+	<p>
+	<br>
+	Bluegrass is a form of American roots music. Most likely beginning in the Appalachian Mountains region, it has many influences from traditional music of the British Isles.
+	This influence is shown through many bluegrass songs being adaptations of old Irish, Scottish or English folk tunes. 
+	<br><br><br>
+	</p>
+</div>
+
+<div id="blue2" class="tabcontent" style="display: none; margin: auto;">
+  <span onclick="this.parentElement.style.display='none'" class="topright">×</span>
+  <h3>The Instruments</h3>
+  <div class="image-container" style="/* width: 1200px; */height: auto;display:  inline-block;text-align:  center;">
+  <img src="blue2.jpg" alt="" width="100%" height="auto">
+  </div>
+  <p class="center" style="font-size:140%;"><b>The Instruments<br></b></p>
+	<p>
+	<br>
+	Instruments commonly used in Bluegrass include Banjo, Mandolin, Guitar, Violin (fiddle), and an assortment of other strings, winds, and seldomly drums. The banjo of course 
+	is the most famous of these, as it was born from bluegrass. The combination of these instruments and their "solos" throughout songs are what give bluegrass the very unique
+	sound and twang.
+	<br><br><br>
+	</p>
+</div>
+
+<div id="blue3" class="tabcontent" style="display: none; margin: auto;">
+  <span onclick="this.parentElement.style.display='none'" class="topright">×</span>
+  <h3>Steve Martin</h3>
+    <div class="image-container" style="/* width: 1200px; */height: auto;">
+  <img src="blue3.jpg" alt="" width="100%" height="auto">
+  </div>
+  <p class="center" style="font-size:140%;"><b>Steve Martin<br></b></p>
+	<p>
+	<br>
+	Unbeknownst to many people, Steve Martin has played banjo since he was five years old. Throughout his acting career, Steve Martin released his own bluegrass songs. After
+	retirement, he devoted much more time to the music, starting a band and releasing multiple albums and touring across the United States. In my personal opinion, that man
+	can wail on a banjo, and I dare say he is as good as the legendary Earl Scruggs.
+	<br><br><br>
+	</p>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+
+</body>
+</html> 
